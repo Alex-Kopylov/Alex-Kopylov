@@ -1,5 +1,5 @@
 ## Aleksei Kopylov
-[email](mailto:alexkopylov123@gmail.com) [linkedin](https://www.linkedin.com/in/aleksei-kopylov-8b0840169/)[github](https://github.com/Alex-Kopylov)
+[email](mailto:alexkopylov123@gmail.com)  |   [linkedin](https://www.linkedin.com/in/aleksei-kopylov-8b0840169/)   |   [github](https://github.com/Alex-Kopylov)
 
 ### ABOUT ME
 A creative **Machine Learning Engineer** with 2 years of commercial experience. Like to solve tough problems and create solutions that inspire and amaze other people. Building a Data Science fraternity at my Alma mater.
