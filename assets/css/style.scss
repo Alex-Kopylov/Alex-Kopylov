@@ -1,6 +1,7 @@
-/*
- * I add this to html files generated with pandoc.
- */
+---
+---
+
+@import "{{ site.theme }}";
 
 html {
   font-size: 100%;
