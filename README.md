@@ -4,4 +4,4 @@
 
 🗿 Stoic
 
-**[email](mailto:alexkopylov123@gmail.com) | [linkedin](https://www.linkedin.com/in/aleksei-kopylov-8b0840169/) | [github](https://github.com/Alex-Kopylov)**
+![](https://i.redd.it/tbe8q8c1kl011.png)
