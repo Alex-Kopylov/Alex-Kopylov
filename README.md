@@ -5,7 +5,7 @@
 
 🧿 Computer Vision Developer
 
-📊 Data Scientis
+📊 Data Scientist
 
 🎓 Bachelor of Computer Science
 
