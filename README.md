@@ -4,4 +4,4 @@
 
 🗿 Stoic
 
-![](https://i.redd.it/tbe8q8c1kl011.png)
+<img src="https://i.redd.it/tbe8q8c1kl011.png" width="325px">
