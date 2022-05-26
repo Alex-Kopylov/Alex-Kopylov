@@ -1,4 +1,4 @@
-<img src="cat.gif" min-width="325px" max-width="325px" width="325px" align="right">
+<img style="float: right;" src="cat.gif">
 
 🧠 Machine Learning Engineer \ Data Scientist
 
