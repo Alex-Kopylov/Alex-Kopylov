@@ -9,4 +9,6 @@
 
 🎓 Bachelor of Computer Science
 
+🧑‍🏫 Former Lecturer
+
 🗿 Stoic
