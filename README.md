@@ -1,4 +1,4 @@
-<img style="float: right;" src="cat.gif">
+<img style="float: right;" src="beaver.gif">
 
 
 🧠 Machine Learning Engineer
