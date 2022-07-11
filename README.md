@@ -1,4 +1,4 @@
-<img src="beaver.gif" height="400">
+<img src="beaver.gif" height="380">
 
 🧠 Machine Learning Engineer
 
