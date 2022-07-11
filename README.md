@@ -1,5 +1,4 @@
-<img style=float:right margin-right=15px src="beaver.gif" height="300">
-
+<img src="beaver.gif" height="400">
 
 🧠 Machine Learning Engineer
 
@@ -7,11 +6,8 @@
 
 📊 Data Scientist
 
-
 🎓 Bachelor of Computer Science
 
 🧑‍🏫 Lecturer
 
 🗿 Stoic
-
-style="float: right; margin-right: 15px;
