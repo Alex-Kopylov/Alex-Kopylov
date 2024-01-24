@@ -1,548 +1,677 @@
-<!doctype html>
-<html>
-    <head>
-        <title>index</title>
-        <meta charset='utf-8'/>
-        <style>
-   .setting-item.ex-setting-item {
-    border-top: unset;
-    padding-top: 0;
-}
-
-*[hidden] {
-    display: none;
-} 
-.pandoc-plugin-error {
-    color: red;
-}
- .lt-underline {
-  cursor: pointer;
-  transition: background-color 100ms ease-out;
-}
-
-.lt-underline.lt-minor {
-  box-shadow: inset 0 -2px #e9b35f;
-}
-
-.lt-underline.lt-major {
-  box-shadow: inset 0 -2px #da615c;
-}
-
-.lt-underline.lt-style {
-  box-shadow: inset 0 -2px #8981f3;
-}
-
-.lt-underline.lt-minor:hover {
-  background-color: #e9b35f21;
-}
-
-.lt-underline.lt-major:hover {
-  background-color: #da615c21;
-}
-
-.lt-underline.lt-style:hover {
-  background-color: #8981f321;
-}
-
-@keyframes lineInserted {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.lt-predictions-container-glass.cm-tooltip,
-.lt-predictions-container.cm-tooltip,
-.lt-predictions-container-glass,
-.lt-predictions-container {
-  position: absolute;
-  animation-duration: 150ms;
-  animation-name: lineInserted;
-  font-family: var(--default-font);
-  font-size: 0.93rem;
-  padding: 12px 0 0;
-  background-color: var(--background-primary);
-  border: 1px solid var(--background-modifier-border);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  width: 300px;
-  line-height: 1.5;
-  z-index: var(--layer-popover);
-  overflow: hidden;
-}
-
-.lt-predictions-container-glass {
-  background: hsla(0, 0%, 100%, 0.25);
-  backdrop-filter: blur(12px);
-}
-
-.lt-predictions-container > button {
-  transition-delay: 0.5s;
-}
-
-.lt-buttoncontainer:not(:empty) {
-  padding: 10px 12px 0;
-}
-
-.lt-buttoncontainer > button {
-  border: 1px solid var(--background-modifier-border);
-  font-size: 1rem;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  padding: 4px 10px;
-}
-
-.lt-title {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-  padding: 0 12px;
-}
-
-.lt-message {
-  padding: 0 12px;
-  display: block;
-}
-
-.lt-ignorecontainer {
-  padding-top: 10px;
-  display: flex;
-}
-
-.lt-status-bar-btn {
-  height: 100%;
-  display: flex;
-  cursor: pointer;
-  line-height: 1;
-  align-items: center;
-}
-
-.lt-status-bar-check-icon {
-  display: block;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-}
-
-.lt-ignore-btn {
-  margin: 0;
-  padding: 12px;
-  display: flex;
-  width: 100%;
-  text-align: left;
-  border-radius: 0;
-  align-items: center;
-  line-height: 1;
-  border-top: 1px solid var(--background-modifier-border);
-}
-
-.lt-ignore-btn > span {
-  display: flex;
-}
-
-.lt-ignore-btn > span:last-child {
-  margin-left: 5px;
-}
-
-.lt-minor .lt-title > span {
-  box-shadow: inset 0 -2px #e9b35f88;
-}
-
-.lt-major .lt-title > span {
-  box-shadow: inset 0 -2px #da615c88;
-}
-
-.lt-style .lt-title > span {
-  box-shadow: inset 0 -2px #8981f388;
-}
-
-.lt-loading > svg {
-  animation-name: spin;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
----
----
-
-@import "{{ site.theme }}";
-
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kopylov Aleksei </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
 html {
-  font-size: 100%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
 }
 
 body {
-  color: #444;
-  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-  font-size: 12px;
-  line-height: 1.7;
-  padding: 1em;
-  margin: auto;
-  max-width: 42em;
-  background: #fefefe;
-}
-.pagebreak { page-break-after: always; }
-a {
-  color: #0645ad;
-  text-decoration: none;
+	line-height: 1.5;
+	white-space: pre-wrap;
 }
 
-a:visited {
-  color: #0b0080;
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
 }
 
-a:hover {
-  color: #06e;
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
 }
 
-a:active {
-  color: #faa700;
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
 }
 
-a:focus {
-  outline: thin dotted;
-}
-
-*::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
-
-*::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
-
-a::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
-a::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
-p {
-  margin: 1em 0;
-}
-
-img {
-  max-width: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #111;
-  line-height: 125%;
-  margin-top: 2em;
-  font-weight: normal;
-}
-
-h4, h5, h6 {
-  font-weight: bold;
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
 }
 
 h1 {
-  font-size: 2.5em;
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
 }
 
 h2 {
-  font-size: 2em;
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
 }
 
 h3 {
-  font-size: 1.5em;
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
 }
 
-h4 {
-  font-size: 1.2em;
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
 }
 
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 0.9em;
-}
-
-blockquote {
-  color: #666666;
-  margin: 0;
-  padding-left: 3em;
-  border-left: 0.5em #EEE solid;
-}
-
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #eee;
-  margin: 1em 0;
-  padding: 0;
-}
-
-pre, code, kbd, samp {
-  color: #000;
-  font-family: monospace, monospace;
-  _font-family: 'courier new', monospace;
-  font-size: 0.98em;
-}
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-b, strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-ins {
-  background: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-ul, ol {
-  margin: 1em 0;
-  padding: 0 0 0 2em;
-}
-
-li p:last-child {
-  margin-bottom: 0;
-}
-
-ul ul, ol ol {
-  margin: .3em 0;
-}
-
-dl {
-  margin-bottom: 1em;
-}
-
-dt {
-  font-weight: bold;
-  margin-bottom: .8em;
-}
-
-dd {
-  margin: 0 0 .8em 2em;
-}
-
-dd:last-child {
-  margin-bottom: 0;
-}
-
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
 }
 
 figure {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-figure img {
-  border: none;
-  margin: 0 auto;
+	margin: 1.25em 0;
+	page-break-inside: avoid;
 }
 
 figcaption {
-  font-size: 0.8em;
-  font-style: italic;
-  margin: 0 0 .8em;
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
 }
 
 table {
-  margin-bottom: 2em;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-spacing: 0;
-  border-collapse: collapse;
+	border-left: none;
+	border-right: none;
 }
 
-table th {
-  padding: .2em 1em;
-  background-color: #eee;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
 }
 
-table td {
-  padding: .2em 1em;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  vertical-align: top;
+th {
+	color: rgba(55, 53, 47, 0.6);
 }
 
-.author {
-  font-size: 1.2em;
-  text-align: center;
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
 }
 
-@media only screen and (min-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-@media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    filter: none !important;
-    -ms-filter: none !important;
-  }
-
-  body {
-    font-size: 12pt;
-    max-width: 100%;
-  }
-
-  a, a:visited {
-    text-decoration: underline;
-  }
-
-  hr {
-    height: 1px;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
-    content: "";
-  }
-
-  pre, blockquote {
-    border: 1px solid #999;
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
-
-  tr, img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  @page :left {
-    margin: 15mm 20mm 15mm 10mm;
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
 }
 
-  @page :right {
-    margin: 15mm 10mm 15mm 20mm;
+ul > li {
+	list-style: disc;
 }
 
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2, h3 {
-    page-break-after: avoid;
-  }
+ul.to-do-list {
+	padding-inline-start: 0;
 }
 
-</style>
-    </head>
-    <body>
-<h2 data-heading="Aleksei Kopylov">Aleksei Kopylov</h2>
-<p><strong><a aria-label-position="top" aria-label="mailto:alexkopylov123@gmail.com" rel="noopener" class="external-link" href="mailto:alexkopylov123@gmail.com" target="_blank">email</a> | <a aria-label-position="top" aria-label="https://www.linkedin.com/in/aleksei-kopylov-8b0840169/" rel="noopener" class="external-link" href="https://www.linkedin.com/in/aleksei-kopylov-8b0840169/" target="_blank">linkedin</a> | <a aria-label-position="top" aria-label="https://github.com/Alex-Kopylov" rel="noopener" class="external-link" href="https://github.com/Alex-Kopylov" target="_blank">github</a></strong><br>
-<a href="https://github.com/Alex-Kopylov/Alex-Kopylov/raw/main/Aleksei_Kopylov_Machine_Learning_CV.pdf" id="link to pdf" target="_blank" rel="noopener">Download as pdf</a></p>
-<hr>
-<h3 data-heading="ABOUT ME">ABOUT ME</h3>
-<p>A creative <strong>Machine Learning Engineer</strong> with <strong>2 years of commercial experience</strong> (4 years in ML). <strong>Bachelor of Computer Science</strong>. Like to solve tough problems and create solutions that inspire and amaze other people. Building a <strong>Data Science</strong> fraternity at my Alma mater. </p>
-<h3 data-heading="KEY SKILLS">KEY SKILLS</h3>
-<ul>
-<li>Develop <strong>Machine Learning</strong> solutions with asynchronous <strong>Python</strong>.</li>
-<li>My main expertise is in <strong>Computer Vision</strong>. I have a solid knowledge of <strong>OpenCV</strong>.  </li>
-<li>Train <strong>Deep Learning</strong> models using <strong>HuggingFace</strong>, <strong>TensorFlow</strong>, <strong>PyTorch</strong> and their numerous high level APIs.</li>
-<li>Architect and build resource optimized ML Data Pipelines using <strong>SQL</strong>, <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>DVC</strong>, <strong>Dask</strong> covered with tests.</li>
-<li>Use <strong>MLOps</strong> practices to produce data versioning, experiment reproducibility, orchestration and monitoring system. Have an expirience with <strong>ClearML</strong> and <strong>wandb</strong>.</li>
-<li>Building stable, and extendable software using <strong>Docker</strong> and <strong>Kubernetes</strong>.</li>
-<li>Use <strong>FastAPI</strong> for a rapid inference and early insights.</li>
-<li><strong>Linux</strong> fanboy. Use it as a main desktop and work environment for years. FOSS enthusiast.</li>
-<li>Aesthetic is everything. Value nicely looking graphs and presentations that people asking to have a link on. Visualize and present data using <strong>TensorBoard</strong>, <strong>Seaborn</strong>, <strong>Ploty</strong>, etc...</li>
-<li>Do initial <strong>researches</strong> for ML|DS teams. Write <strong>documentation</strong> and provide plan how to bring a product from idea to deployment.</li>
-</ul>
-<h3 data-heading="CAREER HISTORY">CAREER HISTORY</h3>
-<p>06/2020 --- present<br>
-<strong><a aria-label-position="top" aria-label="https://zebrains.ru/" rel="noopener" class="external-link" href="https://zebrains.ru/" target="_blank">ZeBrains</a></strong><br>
-Machine Learning Engineer (Computer Vision)</p>
-<ul>
-<li>Developed real time Hand <strong>Pose Estimation</strong> app that uses <strong>Augmented Reality</strong> to fit on rings and bracelets with realistic position and rotation on a hand. I've presented it on several exhibitions. Role: <strong><em>Team Lead</em></strong>.</li>
-<li>My students started careers as machine learning specialists. Created and lectured ML course in the university. Led ML internships. Been invited as an expert and a jury of ML Hackathon.</li>
-<li>Developed a service that extracting and processing information from a complex text on an images (<strong>OCR</strong> + <strong>NLP</strong> + <strong>NER</strong>). </li>
-<li>Created service for <strong>detecting</strong> and <strong>tracking</strong> cars with <strong>License Plate Recognition</strong> (<strong>OCR</strong>).</li>
-<li>Developed <strong>Speech Recognition</strong> <strong>chatbot</strong>. From collecting and processing data to training a neural network and integrating model to a chatbot. Role: <strong><em>Team Lead</em></strong>.</li>
-<li>Wrote <strong>ETL</strong> pipeline for processing work logs and further analysing.</li>
-<li>Developed Synthetic Image Generator framework.</li>
-<li>Done various <strong>researches</strong> and reports with analysis of the current state of ML. Worked on ML knowledge base.</li>
-</ul>
-<p><strong>Tags</strong>: Object Detection,  Object Recognition, Optical Character Recognition (OCR), Object Segmentation, Image Classification, Image Generation, Pose Estimation, Speech Recognition, Named-entity recognition (NER), Augmented Reality (AR), ETL, Public Lectures, Mentoring, Documentation, MLOps, Research.</p>
-<hr>
-<p><strong>Languages:</strong> Russian, English<br>
-<strong>Hobbies:</strong> Phylosophy, Weight training, Art, Indie games</p>
-    </body>
-</html>
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="69897acf-f2c9-4a0c-89e0-3f53567e5702" class="page sans"><header><h1 class="page-title">Kopylov Aleksei </h1><p class="page-description"></p></header><div class="page-body"><div id="b22e9eda-95d6-42c3-a96f-3b5c082c7d6b" class="column-list"><div id="45621bf5-c036-492e-9a4a-8b619738c830" style="width:37.5%" class="column"><h3 id="363e37b0-058a-4b07-9146-d170e4b60249" class="">TL;DR</h3><hr id="78b8f479-701f-4dff-adbe-2da683bf6fab"/><p id="5694def9-be51-4652-8809-7668c4cd07a9" class="">Deep Learning Engineer proficient in various domains: Computer Vision, NLP, Tabular, Sound.</p><p id="5f3dff95-6091-4b5d-888f-0057623fbc0b" class="">Specialise in the end-to-end development of ML systems, following to best MLOps practices. Led teams up to 4 developers.</p><p id="1a8340cb-1b0a-400a-bb8e-f2fbe62df16a" class=""><strong>Bachelor of Computer Science </strong><strong><a href="https://www.ulsu.ru/en/">ULSU</a></strong></p><h3 id="c4ec33b0-0b77-428d-bbf8-4a380b9ce7d1" class="">CONTACT</h3><hr id="ac32b0d5-2b06-4584-99da-d61fee27949a"/><p id="fb2693fc-defe-4c06-a499-30e7f815025d" class="">📞 <a href="callto:+995-595-098-129">+</a><a href="tel:+995-595-098-129">995-595-098-129</a></p><p id="06199625-ae5c-498e-b9ec-cfee07dd636c" class="">📩 <a href="mailto:alexkopylov123@gmail.com">alexkopylov123@gmail.com</a></p><p id="d3296528-a9e9-4322-acba-5365a6d1bc76" class="">🌐 <a href="https://www.linkedin.com/in/aleksei-kopylov-8b0840169/">Linkedin</a></p><p id="bc2d6b83-5efd-471f-925a-a7e04295e2e0" class="">🇬🇪 Tbilisi, Georgia</p><p id="9eec1908-43b6-4254-ad2d-f8eabcf89b7c" class="">🗣️ Russian, English</p><h3 id="039ec319-a427-467c-8be2-272ba4510c07" class="">STACK</h3><hr id="266fa1ea-5340-45ba-8242-8dddf7f3f6c8"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="af04cde2-66d9-46a1-a4e9-37e5ac564282"><div style="font-size:1.5em"><span class="icon">🤖</span></div><div style="width:100%">TensorFlow, PyTorch, HuggingFace, scikit-learn, Keras, Catboost, CUDA</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bd3afb1d-9180-4bb6-8ea6-8fda6a056198"><div style="font-size:1.5em"><span class="icon">🐍</span></div><div style="width:100%">pandas, numpy, asyncio, OpenCV, dask, FastAPI, geopandas, Label Studio, Plotly, dash</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0aadd46b-06b3-4cac-b977-1f0683fd63d9"><div style="font-size:1.5em"><span class="icon">🛠️</span></div><div style="width:100%">Docker, K8s, Dagster, Gitlab CI/CD, DVC, wandb, MLflow, SQL, Clickhouse, Postgres, DuckDB, Grafana, Git, Linux</div></figure><h3 id="895ccb44-a399-4616-b246-e1469cadb616" class="">ML EXPERTISE </h3><hr id="642aeab4-a147-46f4-a6a5-a003e25192be"/><p id="71b31489-6787-4aef-ae5b-500bf81eef4b" class="block-color-default"><mark class="highlight-default"><strong>Computer Vision</strong></mark><mark class="highlight-default">: Pose Estimation, Object Detection, Classification, Object Tracking, OCR, GAN, Segmentation, AR</mark></p><p id="914f4ed3-2f4e-4e0a-aac9-a693c8e2b141" class="block-color-default"><mark class="highlight-default"><strong>Text</strong></mark><mark class="highlight-default">: LLM, NER, Transformers, NLP</mark></p><p id="e1a21f9a-ca36-4fc6-a65e-24f8a74863fc" class="block-color-default"><mark class="highlight-default"><strong>Tabular</strong></mark><mark class="highlight-default">: Time Series Analysis, Recommendation Systems, Forecasting, Classification, Clustering</mark></p><p id="7f8d9f67-4558-4efd-b035-bf44f22d6116" class="block-color-default"><mark class="highlight-default"><strong>Sound</strong></mark><mark class="highlight-default">: Speech to Text, Denoising</mark></p><p id="e81e7e64-c340-42cd-a432-e24aba975e60" class="">
+</p></div><div id="de9f5aa2-160d-4012-a43a-ad43843e979a" style="width:62.49999999999998%" class="column"><h3 id="c8d5aee6-9b60-4c02-ab20-d52128a5c9f9" class=""><strong>CAREER [</strong><mark class="highlight-default"><strong> 4 years of experience</strong></mark><strong> ]</strong></h3><hr id="50d865b1-4c14-4d8f-9ed1-d8798ede2b0d"/><h3 id="dbfa3d06-2e53-4ad7-ae8f-f46de8bfb15d" class="">Head of Data Science at <mark class="highlight-gray"><a href="https://gurtam.com/">Gurtam</a></mark><mark class="highlight-gray"> </mark><mark class="highlight-default">[2022-2024]</mark></h3><hr id="ef1f4e00-d4ec-4857-81f2-11e91b4dd023"/><p id="da7adfc9-421e-4658-8904-d6374e806e5f" class="block-color-default"><strong><mark class="highlight-default">Spearheading team growth; recruiting, developing, and mentoring ML/DS specialists</mark></strong><mark class="highlight-default">; coordinating hardware infrastructure requirements; proactively identifying and leveraging new ML applications.</mark></p><p id="20cd2225-763d-464d-861e-50ece9a1a582" class="block-color-default"><strong>Handling</strong><mark class="highlight-default"> </mark><strong><mark class="highlight-default">Big Data pipelines </mark></strong><mark class="highlight-default">- 4 million real objects with hundreds of features (</mark><strong><mark class="highlight-default">petabytes of data that constantly changing</mark></strong><mark class="highlight-default">).</mark></p><p id="bdcaf921-8947-45a0-adbc-741c24a2ae02" class="block-color-default"><mark class="highlight-default">Integrated </mark><strong><mark class="highlight-default">LLM</mark></strong><mark class="highlight-default"> to streamline </mark><strong><mark class="highlight-default">Q&amp;A on multimodal and dynamically evolving documentation</mark></strong><mark class="highlight-default">, reducing support department&#x27;s workload.</mark></p><p id="967b586b-bd1d-4668-bdbb-57543f0adc3b" class="block-color-default">Reduced client overwhelm through tailored <strong>recommendation systems,</strong> leading to a lesser load on the business development department.</p><p id="b485c2f5-b464-4a7f-a452-99c1571e2c5f" class="block-color-default">Pioneered integration of <strong>MLOps</strong>, <strong>CI/CD,</strong> <strong>DWH</strong>, and <strong>Data Marts</strong> in the production environment that significantly reduced the time of task completions and made solutions robust.</p><p id="e4d95e41-7da9-4999-a6d2-726e99e96472" class="">Performed in-depth research and analysis of telematic data that enhanced data-driven business decisions.</p><h3 id="9392ae62-1e5b-4f18-8900-3f002a8e7112" class=""><strong>Machine Learning Engineer</strong> at <mark class="highlight-gray"><a href="https://www.zebrains.ru/">Zebrains</a></mark><mark class="highlight-gray"> </mark>[2020-2022]</h3><hr id="d8d2355b-35e4-461e-ad22-8831f14361d0"/><p id="2358c0d4-d06e-47a1-a0f0-75914c9e2953" class=""><strong>Led the architectural design and strategic roadmap development for M</strong><strong><mark class="highlight-default">L modules, guiding projects from concept through to production.</mark></strong></p><p id="5a81333c-81fd-4723-a183-5e3f96d30aa3" class=""><strong><mark class="highlight-default">Led the development of an AR + ML application</mark></strong><mark class="highlight-default"> for virtual fitting of rings and bracelets (</mark><strong><mark class="highlight-default">3D Hand Pose Estimation</mark></strong><mark class="highlight-default">), showcased at several exhibition.</mark></p><p id="68173021-27bb-44de-86f7-dc071191d595" class=""><mark class="highlight-default"><strong>Led the development of a Speech Recognition system</strong></mark><mark class="highlight-default"> for video calls</mark></p><p id="b6f79f34-e1c9-4c2b-8fed-192d311752fe" class="block-color-default"><mark class="highlight-default">Developed a service for </mark><mark class="highlight-default"><strong>extracting and processing complex multimodal data from documents (OCR, NLP, NER)</strong></mark><mark class="highlight-default">.</mark></p><p id="0fc0a7ad-f511-4f50-a4ef-27c0b1f15439" class="block-color-default"><mark class="highlight-default">Engineered a solution for </mark><mark class="highlight-default"><strong>Detecting and Tracking Cars</strong></mark><mark class="highlight-default"> with </mark><strong><mark class="highlight-default">OCR</mark></strong><mark class="highlight-default">.</mark></p><p id="193e020b-2d1a-4050-b5b2-b2fb0255010e" class="block-color-default"><mark class="highlight-default">Introduced </mark><mark class="highlight-default"><strong>MLOps</strong></mark><mark class="highlight-default"> in production environment.</mark></p><p id="129184d0-1ecb-4ac0-9172-f0762809b23f" class="block-color-default"><mark class="highlight-default"><strong>Developed a Python framework </strong></mark><mark class="highlight-default">for synthetic image dataset generation, substantially enhancing ML model accuracy.</mark></p><p id="ebd5e0fb-48a4-49f9-ab6c-f0ca77b2b444" class="block-color-default"><mark class="highlight-default">Developed a </mark><mark class="highlight-default"><strong>Data Mart </strong></mark><mark class="highlight-default">for the management team, enhancing data analysis and reporting capabilities.</mark></p><h3 id="a30a32a8-6627-4d83-865a-b2ee322298c0" class=""><strong>University Lecturer (Machine Learning)</strong><em><strong> </strong></em>at <mark class="highlight-gray"><a href="https://www.ulsu.ru">ULSU</a></mark><mark class="highlight-gray"> </mark>[2021-2022]</h3><hr id="8a94cb78-9824-45c2-b569-5e4f4d5cf31d"/><p id="05b5ed0b-425a-48ed-8310-dc39911f1a9a" class=""><mark class="highlight-default"><strong>Numerous of my pupils now excelling in the ML industry</strong></mark><mark class="highlight-default">.</mark></p><p id="889f5278-a2f5-4367-8421-e4348ce78980" class=""><mark class="highlight-default"><strong>Developed and instructed a ML course</strong></mark><mark class="highlight-default">, with focus on hands-on exercises and production approaches.</mark></p><p id="5f24f14e-b92f-484f-846d-fe37e541aede" class=""><mark class="highlight-default"><strong>Managed ML internships;</strong></mark><mark class="highlight-default"> judged ML Hackathon.</mark></p></div></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
