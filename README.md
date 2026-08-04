@@ -1,7 +1,7 @@
 <h1 align="center">Aleksei Kopylov</h1>
 
 <p align="center">
-  AI Engineer · Machine Learning Engineer · Developer Tools
+  AI Engineer · Machine Learning Engineer · Data Scientist
 </p>
 
 <p align="center">
