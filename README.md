@@ -24,5 +24,5 @@
 
 - Started working with AI and machine learning 10 years ago
 - 6 years of commercial AI and machine learning experience
-- University Lecturer in Machine Learning
+- Former University Lecturer in Machine Learning
 - Bachelor of Computer Science
