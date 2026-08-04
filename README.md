@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  I build AI harness tools and practical workflows for AI-assisted development.<br>
-  I stay close to the frontier and turn new capabilities into useful tools.
+  Currently building AI harnesses and trying to stay ahead of the curve.
 </p>
 
 <p align="center">
+  <strong>Open to opportunities</strong><br>
   <a href="mailto:alexkopylov123@gmail.com">alexkopylov123@gmail.com</a>
 </p>
 
