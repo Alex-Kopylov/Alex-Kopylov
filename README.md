@@ -15,9 +15,9 @@
 
 ## Featured Projects
 
-- 🗡️ **[Zweihander](https://github.com/Alex-Kopylov/zweihander)** — marketplace for Codex and Claude Code agent plugins.
-- 🐍 **[AI-Ready Modern Python Template](https://github.com/Alex-Kopylov/ai-ready-modern-python-template)** — modern foundation for AI-ready Python projects.
-- 👀 **[GH Babysitter](https://github.com/Alex-Kopylov/gh-babysitter)** — GitHub automation for keeping work moving.
+- 🗡️ **[Zweihander](https://github.com/Alex-Kopylov/zweihander)** — opinionated skills and agents that move with you across Codex and Claude Code.
+- 🐍 **[AI-Ready Modern Python Template](https://github.com/Alex-Kopylov/ai-ready-modern-python-template)** — low-overhead Python template with strict linters for common AI coding-agent mistakes.
+- 👀 **[GH Babysitter](https://github.com/Alex-Kopylov/gh-babysitter)** — fan-out GitHub events to agents instead of polling, cutting multi-agent idle time.
 
 ## Background
 
