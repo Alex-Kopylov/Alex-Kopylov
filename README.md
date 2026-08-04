@@ -22,7 +22,7 @@
 
 ## Background
 
-- Started working with AI and machine learning 10 years ago
-- 6 years of commercial AI and machine learning experience
+- Started working with AI/ML 10 years ago
+- 6 years of commercial AI/ML experience
 - Former University Lecturer in Machine Learning
 - Bachelor of Computer Science
