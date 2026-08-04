@@ -1,9 +1,31 @@
-<img src="beaver.gif" height="380">
+<p align="center">
+  <img src="beaver.gif" height="280" alt="Beaver">
+</p>
 
-🧠 Machine Learning Engineer / Data Scientist
+<h1 align="center">Aleksei Kopylov</h1>
 
-🧑‍🏫 University Lecturer (ML)
+<p align="center">
+  AI Engineer · Machine Learning Engineer · Developer Tools
+</p>
 
-🎓 Bachelor of Computer Science
+<p align="center">
+  I build AI harness tools and practical workflows for AI-assisted development.<br>
+  I stay close to the frontier and turn new capabilities into useful tools.
+</p>
 
-🗿 Stoic
+<p align="center">
+  <strong>Open to opportunities</strong> in AI engineering, LLM applications, and developer tools.<br>
+  <a href="mailto:alexkopylov123@gmail.com">alexkopylov123@gmail.com</a>
+</p>
+
+## Featured Projects
+
+- [Zweihander](https://github.com/Alex-Kopylov/zweihander) — marketplace for Codex and Claude Code agent plugins.
+- [AI-Ready Modern Python Template](https://github.com/Alex-Kopylov/ai-ready-modern-python-template) — modern foundation for AI-ready Python projects.
+- [GH Babysitter](https://github.com/Alex-Kopylov/gh-babysitter) — GitHub automation for keeping work moving.
+
+## Background
+
+- Machine Learning Engineer and Data Scientist
+- University Lecturer in Machine Learning
+- Bachelor of Computer Science
