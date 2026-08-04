@@ -22,7 +22,6 @@
 
 ## Background
 
-- Started working with AI/ML 10 years ago
-- 6 years of commercial AI/ML experience
+- Started my AI/ML journey 10 years ago; 6 years of commercial experience
 - Former University Lecturer in Deep Learning
 - Bachelor of Computer Science
