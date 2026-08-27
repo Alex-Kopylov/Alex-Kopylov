@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>Open to opportunities</strong><br>
-  <a href="mailto:alexkopylov123@gmail.com">Email</a> ·
+  <a href="mailto:alex.kopylov.dev@gmail.com">Email</a> ·
   <a href="https://www.linkedin.com/in/alex-k-8b0840169/">LinkedIn</a>
 </p>
 
